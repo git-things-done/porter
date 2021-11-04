@@ -1,0 +1,21 @@
+name: “The Porter” for Git Things Done
+description: >
+  Opens and closes GitTD entries each day.
+inputs:
+  token:
+    description: Usually `secrets.GITHUB_TOKEN`.
+    default: ${{ github.token }}
+outputs:
+  today:
+    description: >
+      The issue number of the created issue.
+      We also set `$GTD_TODAY`.
+  yesterday:
+    description: >
+      The issue number of yesterday’s issue.
+      Note, for your first day, this will be empty.
+      We also set `$GTD_YESTERDAY`.
+runs:
+  using: docker
+  image: Dockerfile
+  # ^^ because we want node 16 so we can use modern features

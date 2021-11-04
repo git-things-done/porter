@@ -1,0 +1,15 @@
+on:
+  pull_request:
+    paths:
+    - '**/*.ts'
+    - .github/workflows/ci.yml
+jobs:
+  check-generated-dist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+        env:
+          NODE_ENV: development
+      - run: npm run dist
+      - run: git diff --exit-code

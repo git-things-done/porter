@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "test": "TS_NODE_FILES=true node --loader ts-node/esm ./tests/templater.test.ts",
+    "dist": "ncc build src/index.ts"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@types/node": "^16.11.6",
+    "@vercel/ncc": "^0.31.1",
+    "ts-node": "^10.3.1",
+    "typescript": "^4.4.3",
+    "@types/nunjucks": "^3.2.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "nunjucks": "^3.2.3",
+    "nunjucks-date-filter": "^0.1.1"
+  }
+}

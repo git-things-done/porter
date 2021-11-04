@@ -1,0 +1,14 @@
+name: vx Tagger
+on:
+  release:
+    types: [published, edited]
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: sersoft-gmbh/running-release-tags-action@v1
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          update-full-release: true
+        if: github.event.release.prerelease == false
