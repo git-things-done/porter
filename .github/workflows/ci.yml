@@ -13,3 +13,11 @@ jobs:
           NODE_ENV: development
       - run: npm run dist
       - run: git diff --exit-code
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+        env:
+          NODE_ENV: development
+      - run: npm test
