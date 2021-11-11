@@ -12,7 +12,8 @@ export function templater(template: string, github: any): {title: string, body: 
   const templateVariables = {
     github,
     env: process.env,
-    timestamp: Date.now()
+    timestamp: Date.now(),
+    trimBlocks: true
   }
 
   interface FrontMatterAttributes {

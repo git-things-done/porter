@@ -26148,7 +26148,8 @@ function templater(template, github) {
     const templateVariables = {
         github,
         env: process.env,
-        timestamp: Date.now()
+        timestamp: Date.now(),
+        trimBlocks: true
     };
     let { attributes, body } = front_matter__WEBPACK_IMPORTED_MODULE_2___default()(template);
     body = env.renderString(body, templateVariables);
