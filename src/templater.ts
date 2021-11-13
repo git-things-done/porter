@@ -13,7 +13,8 @@ export function templater(template: string, github: any): {title: string, body: 
     github,
     env: process.env,
     timestamp: Date.now(),
-    trimBlocks: true
+    trimBlocks: true,
+    lstripBlocks: true
   }
 
   interface FrontMatterAttributes {
