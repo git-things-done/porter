@@ -47,11 +47,17 @@ Which can be used in your template thusly:
 ```markdown
 # Quotidian
 - [ ] …
-{% if env.doy % 2 == 0 %}
+{% if env.doy % 2 == 0 -%}
 - [ ] It’s an even-day; do sit-ups
-{% else %}
+{% else -%}
 - [ ] It’s an odd-day; do press-ups
 {% endif %}
+
+<!--
+  Ending with `-%}` rather than `%}` “chomps” the extra newline
+  and stops your template rendering with gaps which GitHub will
+  interpret as a break in the list.
+-->
 
 {% if env.dow == 1 %}
 # Hebdomadal
