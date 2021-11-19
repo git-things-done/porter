@@ -3,6 +3,7 @@ on:
     paths:
     - '**/*.ts'
     - .github/workflows/ci.yml
+    - 'dist/**/*'
 jobs:
   check-generated-dist:
     runs-on: ubuntu-latest
