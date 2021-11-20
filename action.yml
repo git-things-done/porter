@@ -19,3 +19,7 @@ runs:
   using: docker
   image: Dockerfile
   # ^^ because we want node 16 so we can use modern features
+
+branding:
+  icon: check-square
+  color: green
