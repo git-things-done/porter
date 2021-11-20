@@ -26143,14 +26143,15 @@ __webpack_handle_async_dependencies__();
 // templating code adapted from:
 // https://github.com/JasonEtco/create-an-issue
 function templater(template, github) {
-    const env = nunjucks__WEBPACK_IMPORTED_MODULE_0___default().configure({ autoescape: false });
+    const env = nunjucks__WEBPACK_IMPORTED_MODULE_0___default().configure({
+        trimBlocks: true,
+        lstripBlocks: true
+    });
     env.addFilter('moment', (nunjucks_date_filter__WEBPACK_IMPORTED_MODULE_1___default()));
     const templateVariables = {
         github,
         env: process.env,
-        timestamp: Date.now(),
-        trimBlocks: true,
-        lstripBlocks: true
+        timestamp: Date.now()
     };
     let { attributes, body } = front_matter__WEBPACK_IMPORTED_MODULE_2___default()(template);
     body = env.renderString(body, templateVariables);

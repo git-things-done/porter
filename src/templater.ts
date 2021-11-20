@@ -6,15 +6,16 @@ import fm from 'front-matter'
 // https://github.com/JasonEtco/create-an-issue
 
 export function templater(template: string, github: any): {title: string, body: string} {
-  const env = nunjucks.configure({ autoescape: false })
+  const env = nunjucks.configure({
+    trimBlocks: true,
+    lstripBlocks: true
+  })
   env.addFilter('moment', dateFilter)
 
   const templateVariables = {
     github,
     env: process.env,
-    timestamp: Date.now(),
-    trimBlocks: true,
-    lstripBlocks: true
+    timestamp: Date.now()
   }
 
   interface FrontMatterAttributes {
