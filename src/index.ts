@@ -1,8 +1,9 @@
 import * as github from '@actions/github'
-import { getInput, setOutput, exportVariable } from '@actions/core'
+import { getInput, setOutput, exportVariable, warning, debug } from '@actions/core'
 import * as fs from 'fs'
 import { execSync } from 'child_process'
 import { templater } from './templater'
+import { shouldBeClosed } from './closer'
 
 const slug = process.env.GITHUB_REPOSITORY!
 const [owner, repo] = slug.split('/')
@@ -20,3 +21,12 @@ setOutput('today', today)
 
 exportVariable('GTD_YESTERDAY', yesterday)
 exportVariable('GTD_TODAY', today)
+
+const yesterdayNumber = parseInt(yesterday)
+const yesterdayBody = (await octokit.rest.issues.get({ repo, owner, issue_number: yesterdayNumber })).data.body
+if (!yesterdayBody) {
+  warning("yesterday’s body suspiciously empty")
+} else if (shouldBeClosed(yesterdayBody)) {
+  debug(`Closing #${yesterday}`)
+  await octokit.rest.issues.update({ repo, owner, issue_number: yesterdayNumber, state: 'closed' })
+}
