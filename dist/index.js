@@ -28776,7 +28776,7 @@ function templater(template, github) {
         timestamp: Date.now()
     };
     let { attributes, body } = front_matter__WEBPACK_IMPORTED_MODULE_2___default()(template);
-    body = env.renderString(body, templateVariables);
+    body = env.renderString(body, templateVariables).trim();
     const title = env.renderString(attributes.title || '{{ timestamp | moment("L") }}', templateVariables);
     return { title, body };
 }

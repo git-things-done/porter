@@ -27,7 +27,7 @@ export function templater(template: string, github: any): {title: string, body: 
 
   let { attributes, body } = fm<FrontMatterAttributes>(template)
 
-  body = env.renderString(body, templateVariables)
+  body = env.renderString(body, templateVariables).trim()
   const title = env.renderString(attributes.title || '{{ timestamp | moment("L") }}', templateVariables)
 
   return { title, body }
