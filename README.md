@@ -25,6 +25,23 @@ We require a file that represents the daily template at
 We uses [nunjucks][] to process your template and inject it with the worflow
 environment, date and [GitHub Actions context][context].
 
+## Automatically Closing Yesterday’s Ticket
+
+Tickets are only closed if all the task items in the issue body are checked.
+
+If you check everything before the porter runes, you will have to close
+yesterday’s ticket manually.
+
+We’re open to creating a separate action (or cleverly written mode for this
+action) that closes old tickets if everything is checked.
+
+## Indicating Items Were Not Completed
+
+Check *and* strike-out items like so:
+
+```markdown
+- [x] ~thing to do~
+```
 
 ## Advanced Example
 

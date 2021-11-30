@@ -8,7 +8,7 @@ export function shouldBeClosed(input: string): boolean {
 
   let canBeClosed = true
   marked.use({ walkTokens: (token) => {
-    if (token.type === "list_item" && !token.checked)
+    if (token.type === "list_item" && token.checked !== undefined && !token.checked)
       canBeClosed = false
   }})
 

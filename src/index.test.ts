@@ -42,3 +42,13 @@ rv = shouldBeClosed(`
 - [x] foo
 `)
 if (!rv) throw new Error("here")
+
+rv = shouldBeClosed(`
+# A
+- [x] hi1
+- [x] hi2
+
+# B
+* hi3
+`)
+if (!rv) throw new Error("here")
