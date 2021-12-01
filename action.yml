@@ -16,9 +16,8 @@ outputs:
       Note, for your first day, this will be empty.
       We also set `$GTD_YESTERDAY`.
 runs:
-  using: docker
-  image: Dockerfile
-  # ^^ because we want node 16 so we can use modern features
+  using: node16
+  main: dist/index.js
 
 branding:
   icon: check-square
