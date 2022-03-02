@@ -6,7 +6,7 @@ jobs:
   tag:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: sersoft-gmbh/running-release-tags-action@v1
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
