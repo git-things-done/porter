@@ -16,7 +16,7 @@
   "type": "module",
   "dependencies": {
     "front-matter": "^4.0.2",
-    "marked": "^4.0.4",
+    "marked": "^4.0.15",
     "nunjucks": "^3.2.3",
     "nunjucks-date-filter": "^0.1.1"
   }
