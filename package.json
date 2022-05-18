@@ -6,7 +6,7 @@
   "devDependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "@types/marked": "^4.0.1",
+    "@types/marked": "^4.0.3",
     "@types/node": "^16.11.7",
     "@types/nunjucks": "^3.2.0",
     "@vercel/ncc": "^0.33.0",
@@ -16,7 +16,7 @@
   "type": "module",
   "dependencies": {
     "front-matter": "^4.0.2",
-    "marked": "^4.0.4",
+    "marked": "^4.0.16",
     "nunjucks": "^3.2.3",
     "nunjucks-date-filter": "^0.1.1"
   }
