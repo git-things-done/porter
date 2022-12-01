@@ -7,7 +7,7 @@
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
     "@types/marked": "^4.0.1",
-    "@types/node": "^16.11.7",
+    "@types/node": "^18.11.10",
     "@types/nunjucks": "^3.2.0",
     "@vercel/ncc": "^0.33.0",
     "ts-node": "^10.3.1",
